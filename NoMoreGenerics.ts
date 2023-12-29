@@ -1,4 +1,4 @@
-type ApiResponse<Data> ={
+type ApiResponse<Data extends object = {status : number}> ={
   data : Data;
   isError: boolean;
 }
@@ -22,4 +22,12 @@ const blogResponse : BlogResponse = {
 }
 console.log(response.data?.name);
 
-console.log(blogResponse.data.date)
+console.log(blogResponse.data.date);
+
+const checkResponse :ApiResponse ={
+  data: {
+    status : 200,
+  },
+  isError: false
+}
+
