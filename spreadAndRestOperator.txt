@@ -1,0 +1,19 @@
+//------------Print Operator------------
+let person = {
+  name: 'Emma',
+  age:45
+}
+
+let person2 = {
+  ...person,
+  age:50,
+  salary:100000
+}
+console.log(person2)
+
+//------------Rest Operator-------------
+const printSomething = (first, last, ...restInfo)=>{
+ 	console.log(restInfo) 
+}
+
+printSomething('Millie', 'bobby', 'brown','town')

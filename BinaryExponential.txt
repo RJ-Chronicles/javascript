@@ -1,0 +1,30 @@
+class BinaryExponential {
+    public static void main(String[] args) {
+        
+        int res= binaryExponential(2,2);
+        System.out.println("\n"+res);
+    }
+    static int counter = 1;
+    public static int binaryExponential(int a, int b){
+        if(b == 0){
+            return 1;
+        }
+        int res = binaryExponential(a, b/2);
+        if(b%2 !=0){
+            return res* res*a;
+        }else{
+            return res* res;
+        }
+    }
+}
+
+/*
+    ------------Explanation-----------
+    input =>(2,3)
+                (2,1)
+                    (2,0)
+                    return 1; bcz 'b' is zero here
+                return res*res*a =>(1*1*2); bcz 'b' is negative
+            return res*res*a=>(2*2*2); bcz 'b' is negative
+    output=>8
+*/

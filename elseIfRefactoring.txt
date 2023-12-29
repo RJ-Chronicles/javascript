@@ -1,0 +1,17 @@
+let animals = {
+  tiger : 200,
+  lion : 300,
+  rabbit:100,
+  mouse:150
+}
+
+const getPrice = (animals, key)=>{
+   return animals[key];
+}
+
+const price = getPrice(animals, 'mouse');
+if(price == undefined){
+  console.log('Invalid Operation')
+}else{
+  console.log(price)
+}

@@ -1,0 +1,35 @@
+let data = [
+  {id:101, name:'Jena'},
+  {id:104, name:'Lucifer'},
+  {id:100, name:'Emili'},
+  {id:104, name:'Jonason'},
+];
+
+const sorted = data.sort((a, b)=>{
+  if(a.id > b.id){
+    return 1;
+  }else{
+    return -1
+  }
+})
+
+console.log(sorted)
+  console.log('------------------------')
+const findEmployee = data.find((emp) => {
+  return emp.id == 104
+})
+
+console.log(findEmployee)
+
+const filterEmployee = data.filter((emp) => emp.id === 104);
+
+console.log('--------------------------');
+console.log(filterEmployee)
+
+
+const mapEmployee = data.map((emp)=>{
+  return  {name: emp.name, id: emp.id}
+});
+console.log('--------------------------');
+console.log(mapEmployee)
+

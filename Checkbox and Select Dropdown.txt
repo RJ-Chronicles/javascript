@@ -1,0 +1,49 @@
+import "./styles.css";
+import { useState } from "react";
+export default function App() {
+  const skills = ["java", "python", "mongo"];
+  const prePopulate = ["java", "python"];
+  const skillsPrepopulated = [];
+
+  const languages = ["Marathi", "Hindi", "English", "Tamil"];
+  const selectedLanguate = "English";
+  skills.forEach((skill) => {
+    let status = false;
+    prePopulate.forEach((pop) => {
+      if (skill.toLowerCase() === pop.toLowerCase()) {
+        status = true;
+      }
+    });
+    skillsPrepopulated.push({ skill, status });
+  });
+
+  const [mySkills] = useState(skillsPrepopulated);
+  const [myLanguages] = useState(languages);
+
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
+      skills:
+      {mySkills.map((value, index) => (
+        <span key={index}>
+          {`        ${value.skill}`}
+          <input
+            type="checkbox"
+            vlaue={value.skill}
+            defaultChecked={value.status}
+          />
+        </span>
+      ))}
+      <div>
+        Language :
+        <select defaultValue={selectedLanguate}>
+          {myLanguages.map((language, index) => (
+            <option key={index} value={language}>
+              {language}
+            </option>
+          ))}
+        </select>
+      </div>
+    </div>
+  );
+}
